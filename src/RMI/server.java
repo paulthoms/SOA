@@ -26,10 +26,12 @@ public class server extends UnicastRemoteObject implements adder {
 
     }
 
+    //phương thức có thể gọi từ client
     @Override
     public String getStudent(String MSSV) throws RemoteException {
         if (controller.getStudentMSSV(MSSV) != null) {
             return controller.getStudentMSSV(MSSV).getMSSV() + "\n"
+                    + controller.getStudentMSSV(MSSV).getFullName() + "\n"
                     + controller.getStudentMSSV(MSSV).getClassRoom() + "\n"
                     + controller.getStudentMSSV(MSSV).getEmail() + "\n"
                     + controller.getStudentMSSV(MSSV).getDOB() + "\n"
@@ -38,17 +40,11 @@ public class server extends UnicastRemoteObject implements adder {
         return "nothing";
     }
 
-    @Override
-    public int add(int a, int b) throws RemoteException {
-        return a + b;
-    }
-
     public static void main(String args[]) throws RemoteException, AlreadyBoundException {
-//        System.out.println((new server()).getStudent("17020963").getEmail());
         try {
+            //khởi tạo và đăng ký server
             Registry reg = LocateRegistry.createRegistry(5000);
-            reg.bind("hi sever", new server());
-//            reg.bind("get student", new server());
+            reg.bind("find student", new server());
         } catch (RemoteException e) {
 
         }

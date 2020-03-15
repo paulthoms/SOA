@@ -11,10 +11,11 @@ package RMI.Model;
  */
 public class Student {
 
-    private String MSSV, Email, ClassRoom, DOB, Address;
+    private String MSSV, FullName, Email, ClassRoom, DOB, Address;
 
-    public Student(String MSSV, String Email, String ClassRoom, String DOB, String Address) {
+    public Student(String MSSV, String FullName, String Email, String ClassRoom, String DOB, String Address) {
         this.MSSV = MSSV;
+        this.FullName = FullName;
         this.Email = Email;
         this.DOB = DOB;
         this.ClassRoom = ClassRoom;
@@ -27,6 +28,14 @@ public class Student {
 
     public void setMSSV(String MSSV) {
         this.MSSV = MSSV;
+    }
+
+    public String getFullName() {
+        return FullName;
+    }
+
+    public void setFullName(String FullName) {
+        this.FullName = FullName;
     }
 
     public String getEmail() {

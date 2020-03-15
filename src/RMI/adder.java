@@ -12,7 +12,5 @@ package RMI;
 import RMI.Model.Student;
 import java.rmi.*;
 public interface adder extends Remote {
-    public int add(int a,int b) throws RemoteException;
-
     public String getStudent(String string) throws RemoteException;
 }

@@ -17,22 +17,24 @@ import java.util.Scanner;
 public class client {
 
     public static void main(String args[]) {
+        //khởi tạo client
         client c = new client();
         c.connectRemote();
     }
 
     private void connectRemote() {
+        //đăng ký client
         try {
             Scanner sc = new Scanner(System.in);
             Registry reg = LocateRegistry.getRegistry("localhost", 5000);
-            adder ad = (adder) reg.lookup("hi sever");
-
-//            int a = sc.nextInt();
-//            int b = sc.nextInt();
+            adder ad = (adder) reg.lookup("find student");
             String MSSV = "";
-            while (MSSV != "end") {
+            while (!"end".equals(MSSV)) {
+                System.out.println("Nhập mã sinh viên: ");
                 MSSV = sc.nextLine();
+                System.out.println("Thông tin sinh viên: ");
                 System.out.println(ad.getStudent(MSSV));
+                System.out.println("-----------------------");
             }
 
         } catch (Exception e) {

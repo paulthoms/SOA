@@ -30,8 +30,8 @@ public class manager {
 
         ArrayList<Student> listStudent = new ArrayList<>();
 
-        listStudent.add(new Student("17020962", "avaichuong@gmail.com", "K62CB", "02/01/1999", "Thanh Hoa"));
-        listStudent.add(new Student("17020963", "avaichuong1@gmail.com", "K62CB", "02/01/1999", "Thanh Hoa"));
+        listStudent.add(new Student("17020962","Tran Hong Phuc" ,"hongphuc@gmail.com", "K62CB", "02/01/1999", "Thanh Hoa"));
+        listStudent.add(new Student("17020963", "Tran Hong Ha","hongha@gmail.com", "K62CB", "03/01/1999", "Ha Noi"));
 
         return listStudent;
     }
